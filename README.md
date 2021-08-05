@@ -6,13 +6,13 @@ Takes ProseMirror JSON and outputs HTML.
 
 ## Installation
 ```bash
-npm install prosemirror-to-html-js --save
+yarn add @eteu-technologies/prosemirror-to-html-js
 ```
 
 ## Usage
 
 ```js
-const Renderer = require("prosemirror-to-html").Renderer;
+const { Renderer } = require("@eteu-technologies/prosemirror-to-html-js");
 
 const renderer = new Renderer();
 
@@ -29,7 +29,9 @@ console.log(renderer.render({
       ]
     }
   ]
-}));  // `<p>Example Text</p>`
+}));
+
+// Outputs `<p>Example Text</p>`
 ```
 
 ## Supported Nodes
@@ -54,7 +56,7 @@ console.log(renderer.render({
 Define your node as a class -
 
 ```js
-const Node = require("prosemirror-to-html").Node;
+const { Node } = require("@eteu-technologies/prosemirror-to-html-js");
 
 class CustomNode extends Node {
     matching () {
