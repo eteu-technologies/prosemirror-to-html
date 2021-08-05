@@ -9,4 +9,6 @@ node_modules
 .idea/
 
 .DS_Store
-package-lock.json
+
+/.envrc
+/.direnv
