@@ -57,8 +57,14 @@ class Renderer {
                 break;
             }
         }
-
-        if (node.content) {
+        if (node.hasOwnProperty('attrs') && Array.isArray(node.attrs.customContent)){
+            node.attrs.customContent.forEach(block => {
+                block.forEach(p => {
+                    html.push(...[this.renderOpeningTag('p'), p, this.renderClosingTag('p')]);
+                });
+                html.push(this.renderOpeningTag('br'));
+            });
+        } else if (node.content) {
             for (let i in node.content) {
                 const nestedNode = node.content[i];
                 html.push(this.renderNode(nestedNode));
