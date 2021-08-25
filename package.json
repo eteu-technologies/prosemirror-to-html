@@ -1,6 +1,6 @@
 {
   "name": "@eteu-technologies/prosemirror-to-html-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Takes ProseMirror JSON and outputs HTML",
   "main": "index.js",
   "scripts": {
