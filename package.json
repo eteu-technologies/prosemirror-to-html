@@ -4,17 +4,20 @@
   "description": "Takes ProseMirror JSON and outputs HTML",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "tsc:gentypes": "tsc index.js src/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "keywords": [
     "prosemirror",
     "text-editor"
   ],
+  "types": "./types/index.d.ts",
   "author": "Ashwani Agarwal",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.0",
+    "typescript": "^4.3.5"
   }
 }
