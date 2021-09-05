@@ -57,12 +57,17 @@ class Renderer {
                 break;
             }
         }
-        if (node.hasOwnProperty('attrs') && Array.isArray(node.attrs.customContent)){
-            node.attrs.customContent.forEach(block => {
-                block.forEach(p => {
-                    html.push(...[this.renderOpeningTag('p'), p, this.renderClosingTag('p')]);
-                });
-                html.push(this.renderOpeningTag('br'));
+        // converting custom content into proper html
+        if (node.hasOwnProperty('attrs') && Array.isArray(node.attrs.displayFields) && node.attrs.mfVal){
+            const values = Array.isArray(node.attrs.mfVal) ? node.attrs.mfVal : [node.attrs.mfVal];
+            values.forEach(val => {
+                node.attrs.displayFields.forEach(field => {
+                    const printableVal = this.getJsonVal(val, field);
+                    if (printableVal) {
+                        html.push(...[this.renderOpeningTag('p'), printableVal, this.renderClosingTag('p')]);
+                    }
+                    html.push(this.renderOpeningTag('br'));
+                })
             });
         } else if (node.content) {
             for (let i in node.content) {
@@ -180,6 +185,24 @@ class Renderer {
             this.addMark(marks[i]);
         }
     }
+
+    getJsonVal = (json, key) => {
+        let result = null;
+        if (json && typeof key === 'string') {
+            key.split('.').forEach((nested, index) => {
+                if (index === 0) {
+                    if (json.hasOwnProperty(nested)) {
+                        result = json[nested];
+                    }
+                } else if (result && result.hasOwnProperty(nested)) {
+                    result = result[nested];
+                } else {
+                    result = null;
+                }
+            });
+        }
+        return result;
+    };
 }
 
 module.exports = Renderer;
