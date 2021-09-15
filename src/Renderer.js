@@ -58,7 +58,7 @@ class Renderer {
             }
         }
         // converting custom content into proper html
-        if (node.hasOwnProperty('attrs') && Array.isArray(node.attrs.displayFields) && node.attrs.mfVal){
+        if (node.hasOwnProperty('attrs') && Array.isArray(node.attrs.displayFields) && node.attrs.displayFields.length  && node.attrs.mfVal){
             const values = Array.isArray(node.attrs.mfVal) ? node.attrs.mfVal : [node.attrs.mfVal];
             values.forEach(val => {
                 node.attrs.displayFields.forEach(field => {
