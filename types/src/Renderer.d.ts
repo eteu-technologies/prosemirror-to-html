@@ -12,4 +12,5 @@ declare class Renderer {
     addNodes(nodes: any): void;
     addMark(mark: any): void;
     addMarks(marks: any): void;
+    getJsonVal: (json: any, key: any) => any;
 }
