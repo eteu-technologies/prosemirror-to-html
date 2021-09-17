@@ -66,8 +66,8 @@ class Renderer {
                     if (printableVal) {
                         html.push(...[this.renderOpeningTag('p'), printableVal, this.renderClosingTag('p')]);
                     }
-                    html.push(this.renderOpeningTag('br'));
-                })
+                });
+                html.push(this.renderOpeningTag('br'));
             });
         } else if (node.content) {
             for (let i in node.content) {
