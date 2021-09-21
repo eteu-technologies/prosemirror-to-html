@@ -72,7 +72,7 @@ class Renderer {
         } else if (node.hasOwnProperty('attrs') && node.attrs.picker === 'table cell' && Array.isArray(node.attrs.mfVal)) {
             node.attrs.mfVal.forEach(val => {
                 html.push(...[this.renderOpeningTag('p'), val, this.renderClosingTag('p')])
-            })
+            });
         } else if (node.content) {
             for (let i in node.content) {
                 const nestedNode = node.content[i];
