@@ -1,23 +1,21 @@
-class Node {
-    constructor (node) {
-        this.node = node;
-    }
+export default class Node {
+  constructor(node) {
+    this.node = node;
+  }
 
-    matching () {
-        return false;
-    }
+  matching() {
+    return false;
+  }
 
-    selfClosing () {
-        return false;
-    }
+  selfClosing() {
+    return false;
+  }
 
-    tag () {
-        return null;
-    }
+  tag() {
+    return null;
+  }
 
-    text () {
-        return null;
-    }
+  text() {
+    return null;
+  }
 }
-
-module.exports = Node;

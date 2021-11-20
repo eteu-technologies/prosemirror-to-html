@@ -1,20 +1,18 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class CodeBlock extends Node {
-    matching () {
-        return this.node.type === "code_block";
-    }
+export default class CodeBlock extends Node {
+  matching() {
+    return this.node.type === "code_block";
+  }
 
-    tag () {
-        return [
-            {
-                tag: "pre"
-            },
-            {
-                tag: "code"
-            }
-        ];
-    }
+  tag() {
+    return [
+      {
+        tag: "pre",
+      },
+      {
+        tag: "code",
+      },
+    ];
+  }
 }
-
-module.exports = CodeBlock;

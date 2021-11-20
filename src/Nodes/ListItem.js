@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class ItemList extends Node {
-    matching () {
-        return this.node.type === "list_item";
-    }
+export default class ItemList extends Node {
+  matching() {
+    return this.node.type === "list_item";
+  }
 
-    tag () {
-        return "li";
-    }
+  tag() {
+    return "li";
+  }
 }
-
-module.exports = ItemList;

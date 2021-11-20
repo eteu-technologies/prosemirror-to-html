@@ -1,17 +1,15 @@
-const Node = require("../../../src/Nodes/Node");
+import { Node } from "../../../mod.ts";
 
-class HardBreak extends Node {
-    matching () {
-        return this.node.type === "hard_break";
-    }
+export default class HardBreak extends Node {
+  matching() {
+    return this.node.type === "hard_break";
+  }
 
-    selfClosing () {
-        return true;
-    }
+  selfClosing() {
+    return true;
+  }
 
-    tag () {
-        return "br";
-    }
+  tag() {
+    return "br";
+  }
 }
-
-module.exports = HardBreak;

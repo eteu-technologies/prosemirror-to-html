@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class OrderedList extends Node {
-    matching () {
-        return this.node.type === "ordered_list";
-    }
+export default class OrderedList extends Node {
+  matching() {
+    return this.node.type === "ordered_list";
+  }
 
-    tag () {
-        return "ol";
-    }
+  tag() {
+    return "ol";
+  }
 }
-
-module.exports = OrderedList;

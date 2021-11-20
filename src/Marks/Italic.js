@@ -1,13 +1,11 @@
-const Mark = require("./Mark");
+import Mark from "./Mark.js";
 
-class Italic extends Mark {
-    matching () {
-        return this.mark.type === "italic";
-    }
+export default class Italic extends Mark {
+  matching() {
+    return this.mark.type === "italic";
+  }
 
-    tag () {
-        return "em";
-    }
+  tag() {
+    return "em";
+  }
 }
-
-module.exports = Italic;

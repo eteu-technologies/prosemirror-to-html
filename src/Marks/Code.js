@@ -1,13 +1,11 @@
-const Mark = require("./Mark");
+import Mark from "./Mark.js";
 
-class Code extends Mark {
-    matching () {
-        return this.mark.type === "code";
-    }
+export default class Code extends Mark {
+  matching() {
+    return this.mark.type === "code";
+  }
 
-    tag () {
-        return "code";
-    }
+  tag() {
+    return "code";
+  }
 }
-
-module.exports = Code;

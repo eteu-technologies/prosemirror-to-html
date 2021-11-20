@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class Heading extends Node {
-    matching () {
-        return this.node.type === "heading";
-    }
+export default class Heading extends Node {
+  matching() {
+    return this.node.type === "heading";
+  }
 
-    tag () {
-        return `h${this.node.attrs.level}`;
-    }
+  tag() {
+    return `h${this.node.attrs.level}`;
+  }
 }
-
-module.exports = Heading;

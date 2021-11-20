@@ -1,20 +1,18 @@
-const Mark = require("./Mark");
+import Mark from "./Mark.js";
 
-class Link extends Mark {
-    matching () {
-        return this.mark.type === "link";
-    }
+export default class Link extends Mark {
+  matching() {
+    return this.mark.type === "link";
+  }
 
-    tag () {
-        return [
-            {
-                tag: "a",
-                attrs: {
-                    href: this.mark.attrs.href
-                }
-            }
-        ]
-    }
+  tag() {
+    return [
+      {
+        tag: "a",
+        attrs: {
+          href: this.mark.attrs.href,
+        },
+      },
+    ];
+  }
 }
-
-module.exports = Link;

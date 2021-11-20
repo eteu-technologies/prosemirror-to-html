@@ -1,13 +1,11 @@
-const Mark = require("../../../src/Marks/Mark");
+import { Mark } from "../../../mod.ts";
 
-class Superscript extends Mark {
-    matching () {
-        return this.mark.type === "superscript";
-    }
+export default class Superscript extends Mark {
+  matching() {
+    return this.mark.type === "superscript";
+  }
 
-    tag () {
-        return "sup";
-    }
+  tag() {
+    return "sup";
+  }
 }
-
-module.exports = Superscript;

@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class Blockquote extends Node {
-    matching () {
-        return this.node.type === "blockquote";
-    }
+export default class Blockquote extends Node {
+  matching() {
+    return this.node.type === "blockquote";
+  }
 
-    tag () {
-        return "blockquote";
-    }
+  tag() {
+    return "blockquote";
+  }
 }
-
-module.exports = Blockquote;

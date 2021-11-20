@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class BulletList extends Node {
-    matching () {
-        return this.node.type === "bullet_list";
-    }
+export default class BulletList extends Node {
+  matching() {
+    return this.node.type === "bullet_list";
+  }
 
-    tag () {
-        return "ul";
-    }
+  tag() {
+    return "ul";
+  }
 }
-
-module.exports = BulletList;

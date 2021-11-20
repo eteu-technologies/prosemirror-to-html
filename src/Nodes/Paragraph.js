@@ -1,13 +1,11 @@
-const Node = require("./Node");
+import Node from "./Node.js";
 
-class Paragraph extends Node {
-    matching () {
-        return this.node.type === "paragraph";
-    }
+export default class Paragraph extends Node {
+  matching() {
+    return this.node.type === "paragraph";
+  }
 
-    tag () {
-        return "p";
-    }
+  tag() {
+    return "p";
+  }
 }
-
-module.exports = Paragraph;

@@ -1,13 +1,11 @@
-const Mark = require("./Mark");
+import Mark from "./Mark.js";
 
-class Bold extends Mark {
-    matching () {
-        return this.mark.type === "bold";
-    }
+export default class Bold extends Mark {
+  matching() {
+    return this.mark.type === "bold";
+  }
 
-    tag () {
-        return "strong";
-    }
+  tag() {
+    return "strong";
+  }
 }
-
-module.exports = Bold;
