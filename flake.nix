@@ -22,6 +22,7 @@
           nativeBuildInputs = [
             pkgs.nodejs-16_x
             pkgs.deno
+            pkgs.act
           ];
         };
       });
