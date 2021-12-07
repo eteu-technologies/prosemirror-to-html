@@ -1,11 +1,11 @@
-import { Node } from "../../../mod.ts";
+import { Node } from '../../../mod.ts';
 
 export default class Div extends Node {
-  matching() {
-    return this.node.type === "div";
-  }
+    matching() {
+        return this.node.type === 'div';
+    }
 
-  tag() {
-    return "div";
-  }
+    tag() {
+        return 'div';
+    }
 }

@@ -1,11 +1,11 @@
-import Node from "./Node.js";
+import Node from './Node.js';
 
 export default class Paragraph extends Node {
-  matching() {
-    return this.node.type === "paragraph";
-  }
+    matching() {
+        return this.node.type === 'paragraph';
+    }
 
-  tag() {
-    return "p";
-  }
+    tag() {
+        return 'p';
+    }
 }

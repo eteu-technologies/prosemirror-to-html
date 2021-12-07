@@ -1,11 +1,11 @@
-import Mark from "./Mark.js";
+import Mark from './Mark.js';
 
 export default class Code extends Mark {
-  matching() {
-    return this.mark.type === "code";
-  }
+    matching() {
+        return this.mark.type === 'code';
+    }
 
-  tag() {
-    return "code";
-  }
+    tag() {
+        return 'code';
+    }
 }

@@ -1,8 +1,8 @@
 # ProseMirror to HTML (JS)
 
 (This package is based on
-[prosemirror-to-html](https://github.com/ueberdosis/prosemirror-to-html), which was
-originally written for PHP.)
+[prosemirror-to-html](https://github.com/ueberdosis/prosemirror-to-html), which
+was originally written for PHP.)
 
 Takes ProseMirror JSON and outputs HTML.
 
@@ -23,23 +23,23 @@ See
 
 ```js
 //const { Renderer } = require("@eteu-technologies/prosemirror-to-html-js");
-import { Renderer } from "https://cdn.skypack.dev/@eteu-technologies/prosemirror-to-html-js";
+import { Renderer } from 'https://cdn.skypack.dev/@eteu-technologies/prosemirror-to-html-js';
 
 const renderer = new Renderer();
 
 console.log(renderer.render({
-  "type": "doc",
-  "content": [
-    {
-      "type": "paragraph",
-      "content": [
+    'type': 'doc',
+    'content': [
         {
-          "type": "text",
-          "text": "Example Paragraph",
+            'type': 'paragraph',
+            'content': [
+                {
+                    'type': 'text',
+                    'text': 'Example Paragraph',
+                },
+            ],
         },
-      ],
-    },
-  ],
+    ],
 }));
 
 // Outputs `<p>Example Text</p>`
@@ -68,16 +68,16 @@ Define your node as a class -
 
 ```js
 //const { Node } = require("@eteu-technologies/prosemirror-to-html-js");
-import { Node } from "https://cdn.skypack.dev/@eteu-technologies/prosemirror-to-html-js";
+import { Node } from 'https://cdn.skypack.dev/@eteu-technologies/prosemirror-to-html-js';
 
 class CustomNode extends Node {
-  matching() {
-    return this.node.type === "custom_node";
-  }
+    matching() {
+        return this.node.type === 'custom_node';
+    }
 
-  tag() {
-    return "cnode";
-  }
+    tag() {
+        return 'cnode';
+    }
 }
 ```
 
