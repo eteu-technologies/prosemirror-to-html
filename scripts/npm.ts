@@ -1,4 +1,4 @@
-import { build } from 'https://deno.land/x/dnt@0.7.3/mod.ts';
+import { build } from 'https://deno.land/x/dnt@0.7.4/mod.ts';
 
 const outDir = './dist';
 
