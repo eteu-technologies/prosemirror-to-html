@@ -70,6 +70,10 @@ export default class Renderer {
         break;
       }
     }
+    // Fix empty cells with no height
+    if (node.type === 'paragraph' && !node.content) {
+        html.push(this.renderOpeningTag("br"));
+    }
     // converting custom content into proper html
     if (
       node.hasOwnProperty("attrs") && Array.isArray(node.attrs.displayFields) &&
