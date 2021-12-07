@@ -75,15 +75,10 @@ export default class Renderer {
         html.push(this.renderOpeningTag("br"));
     }
     // converting custom content into proper html
-    if (
-      node.hasOwnProperty("attrs") && Array.isArray(node.attrs.displayFields) &&
-      node.attrs.displayFields.length && node.attrs.mfVal
-    ) {
-      const values = Array.isArray(node.attrs.mfVal)
-        ? node.attrs.mfVal
-        : [node.attrs.mfVal];
-      values.forEach((val) => {
-        node.attrs.displayFields.forEach((field) => {
+    else if (node.attrs?.displayFields?.length && node.attrs?.mfVal) {
+      const values = Array.isArray(node.attrs.mfVal) ? node.attrs.mfVal : [node.attrs.mfVal];
+      values.forEach(val => {
+        node.attrs.displayFields.forEach(field => {
           const printableVal = this.getJsonVal(val, field);
           if (printableVal) {
             html.push(...[
@@ -95,10 +90,7 @@ export default class Renderer {
         });
         html.push(this.renderOpeningTag("br"));
       });
-    } else if (
-      node.hasOwnProperty("attrs") && node.attrs.picker === "table cell" &&
-      Array.isArray(node.attrs.mfVal)
-    ) {
+    } else if (node.attrs?.picker === "table cell" && node.attrs?.mfVal?.length) {
       node.attrs.mfVal.forEach((val) => {
         html.push(...[
           this.renderOpeningTag("p"),
@@ -143,7 +135,6 @@ export default class Renderer {
         }
       });
     }
-
     return html.join("");
   }
 
