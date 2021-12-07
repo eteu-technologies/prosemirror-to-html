@@ -1,0 +1,23 @@
+{
+    "lint": {
+        "files": {
+            "exclude": ["src/testdata/", "dist/"]
+        },
+        "rules": {
+            "tags": ["recommended"],
+            "include": ["ban-untagged-todo"],
+            "exclude": ["no-unused-vars", "no-explicit-any"]
+        }
+    },
+    "fmt": {
+        "files": {
+            "exclude": ["src/testdata/", "dist/"]
+        },
+        "options": {
+            "lineWidth": 140,
+            "indentWidth": 4,
+            "singleQuote": true,
+            "proseWrap": "preserve"
+        }
+    }
+}
